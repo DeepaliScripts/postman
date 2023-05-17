@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "44107eb8-4e88-41d6-a0fd-1c569b00d6a5",
+		"name": "ResReq",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26942131"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "User-Info",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/api/users/2",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Of Users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"console.log(\"Hello World....\");",
+									"",
+									"let urlvar = pm.variables.get(\"BaseURL\");",
+									"console.log(\"Value for URL variable is : \" +urlvar);",
+									"",
+									"pm.variables.set(\"Name\",\"POSTMAN\");",
+									"console.log(pm.variables.get(\"Name\"));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseURL}}/api/users?page=2",
+							"host": [
+								"{{BaseURL}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "New Registration",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNkN2IyOTgwNTcyZjAwMTNjZGI0MDkiLCJpYXQiOjE2ODE3NTI1NDJ9.fkSc9cdPaUpVyqFPwxmkWtr-UYe_YvEYvcz3GqQwFLo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"{{email}}\",\n    \"password\": \"{{password}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://reqres.in/{{endpoint}}",
+							"protocol": "https",
+							"host": [
+								"reqres",
+								"in"
+							],
+							"path": [
+								"{{endpoint}}"
+							],
+							"query": [
+								{
+									"key": "content-type",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"console.log(\"Hello World....\");",
+					"",
+					"let urlvar = pm.variables.get(\"BaseURL\");",
+					"console.log(\"Value for URL variable is : \" +urlvar);",
+					"",
+					"",
+					"pm.variables.set(\"Name\",\"POSTMAN\");",
+					"console.log(pm.variables.get(\"Name\"));"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BaseURL",
+			"value": "https://reqres.in",
+			"type": "string"
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"id": "087a90d6-93ac-4c59-bb7f-52245fc9f16e",
+	"name": "QA-testing-env",
+	"values": [
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDNkN2IyOTgwNTcyZjAwMTNjZGI0MDkiLCJpYXQiOjE2ODE3NTI1NDJ9.fkSc9cdPaUpVyqFPwxmkWtr-UYe_YvEYvcz3GqQwFLo",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "baseURL",
+			"value": "https://thinking-tester-contact-list.herokuapp.com/contacts",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "firstName",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "_Id",
+			"value": "",
+			"type": "any",
+			"enabled": false
+		},
+		{
+			"key": "email",
+			"value": "",
+			"type": "any",
+			"enabled": false
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2023-04-21T15:03:06.924Z",
+	"_postman_exported_using": "Postman/10.12.13"
+}
